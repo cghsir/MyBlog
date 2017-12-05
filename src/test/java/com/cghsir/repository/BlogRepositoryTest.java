@@ -1,6 +1,6 @@
 package com.cghsir.repository;
 
-import com.cghsir.domain.Blog;
+import com.cghsir.repository.domain.Blog;
 import com.cghsir.util.IdUtil;
 import org.junit.Assert;
 import org.junit.Test;

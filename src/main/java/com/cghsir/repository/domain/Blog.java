@@ -1,4 +1,4 @@
-package com.cghsir.domain;
+package com.cghsir.repository.domain;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -58,5 +58,4 @@ public class Blog implements Serializable {
 
     public Blog() {
     }
-
 }

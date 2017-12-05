@@ -1,6 +1,7 @@
 package com.cghsir.repository;
 
-import com.cghsir.domain.Blog;
+
+import com.cghsir.repository.domain.Blog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
