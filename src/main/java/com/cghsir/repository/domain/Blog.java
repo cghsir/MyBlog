@@ -2,6 +2,7 @@ package com.cghsir.repository.domain;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -16,6 +17,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Data
+@DynamicUpdate
 public class Blog implements Serializable {
 
     private static final long serialVersionUID = 1L;

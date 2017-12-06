@@ -29,7 +29,7 @@ public interface BlogService {
      *
      * @param blogvo
      */
-    void update(BlogVO blogvo);
+    void update(String id, BlogVO blogvo);
 
     /**
      * 删除博客

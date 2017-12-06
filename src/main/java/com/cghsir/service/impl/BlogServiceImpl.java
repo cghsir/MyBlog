@@ -33,8 +33,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public void update(BlogVO blogvo) {
-        repository.save(BlogConverter.convert2DAO(blogvo));
+    public void update(String id, BlogVO blogvo) {
+        Blog dao = repository.findOne(id);
+        if (dao == null) {
+            throw new RuntimeException("修改的博客不存在");
+        }
+        repository.save(BlogConverter.convert2DAO(blogvo, dao));
     }
 
     @Override

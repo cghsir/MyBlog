@@ -40,7 +40,7 @@ public class BlogServiceImplTest {
         blogVO.setSummary("vo摘要");
         blogVO.setContent("vo内容");
         blogVO.setHtmlContent("vo——html内容");
-        blogService.update(blogVO);
+        blogService.update(blogVO.getId(), blogVO);
     }
 
     @Test
