@@ -3,7 +3,6 @@ package com.cghsir.util;
 import com.cghsir.repository.domain.Blog;
 import com.cghsir.web.vo.BlogVO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -27,7 +26,7 @@ public class BlogConverter extends ConvertS2T {
     public static BlogVO convert2VO(Blog dao) {
         dao = ObjectUtils.isEmpty(dao) ? new Blog() : dao;
         BlogVO vo = new BlogVO();
-        BeanUtils.copyProperties(dao, vo);
+        MyBeanUtils.copyPropertiesIgnoreNull(dao, vo);
         log.info("【博客dao->vo】【博客vo:{}】【博客dao:{}】", vo, dao);
         return vo;
     }
@@ -42,7 +41,7 @@ public class BlogConverter extends ConvertS2T {
     public static Blog convert2DAO(BlogVO vo, Blog dao) {
         vo = ObjectUtils.isEmpty(vo) ? new BlogVO() : vo;
         dao = ObjectUtils.isEmpty(dao) ? new Blog() : dao;
-        BeanUtils.copyProperties(vo, dao);
+        MyBeanUtils.copyPropertiesIgnoreNull(vo, dao);
         log.info("【博客vo->dao】【博客vo:{}】【博客dao:{}】", vo, dao);
         return dao;
     }

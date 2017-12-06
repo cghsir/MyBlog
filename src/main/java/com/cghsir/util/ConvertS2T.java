@@ -2,7 +2,6 @@ package com.cghsir.util;
 
 import com.cghsir.repository.domain.Blog;
 import com.cghsir.web.vo.BlogVO;
-import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +28,7 @@ public class ConvertS2T {
             if (sourceList != null) {
                 for (S source : sourceList) {
                     T target = clazz.newInstance();
-                    BeanUtils.copyProperties(source, target);
+                    MyBeanUtils.copyPropertiesIgnoreNull(source, target);
                     rtn.add(target);
                 }
             }
